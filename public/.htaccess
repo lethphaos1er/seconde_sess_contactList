@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteBase /scripts/script_serveur/examen2025/alex_parker/public/
+
+# Détail d'un post: /posts/123/slug-du-post.html
+RewriteRule ^posts/([0-9]+)/[^/]+\.html$ index.php?posts=show&id=$1 [QSA,L]
+
+# Ajout (form): /posts/add/form.html
+RewriteRule ^posts/add/form\.html$ index.php?posts=add [QSA,L]
+
+# Ajout (insert): /posts/add/insert\.html
+RewriteRule ^posts/add/insert\.html$ index.php?posts=insert [QSA,L]
+
+# Édition (form): /posts/([0-9]+)/[^/]+/edit/form\.html
+RewriteRule ^posts/([0-9]+)/[^/]+/edit/form\.html$ index.php?posts=edit&id=$1 [QSA,L]
+
+# Édition (update): /posts/([0-9]+)/[^/]+/edit/update\.html
+RewriteRule ^posts/([0-9]+)/[^/]+/edit/update\.html$ index.php?posts=update&id=$1 [QSA,L]
+
+# Suppression: /posts/([0-9]+)/[^/]+/delete\.html
+RewriteRule ^posts/([0-9]+)/[^/]+/delete\.html$ index.php?posts=del&id=$1 [QSA,L]
+
+# Accueil (liste): /
+# (Laisse index.php par défaut ; si besoin, tu peux aussi réécrire ^$ vers index.php)
